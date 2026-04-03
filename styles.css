@@ -1,0 +1,166 @@
+/* -------------------- FONDO -------------------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Imagen de fondo centrada y ajustada sin exceder */
+  background: url("./PlataformaEducativa.png") no-repeat center center fixed;
+  background-size: contain; /* ajusta la imagen sin recortarla */
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: black; /* color de fondo si la imagen no cubre toda la pantalla */
+}
+
+/* Overlay para no opacar los elementos */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* -------------------- WRAPPER -------------------- */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* -------------------- CONTENEDOR -------------------- */
+.container {
+  width: 800px;
+  max-width: 95%;
+  padding: 20px;
+
+  /* Fondo traslúcido multicolor y animado */
+  background: linear-gradient(270deg, 
+    rgba(255,0,150,0.08), 
+    rgba(0,204,255,0.08), 
+    rgba(0,255,150,0.08), 
+    rgba(255,255,0,0.08));
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* -------------------- INPUTS -------------------- */
+input {
+  padding: 8px;
+  width: 90%;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  color: black;
+}
+
+/* Ajuste para las celdas de fecha */
+input.fecha {
+  width: 90%;
+  text-align: center;
+}
+
+/* -------------------- BOTONES -------------------- */
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.25);
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.45);
+  transform: scale(1.05);
+}
+
+/* BOTÓN AZUL RESULTADOS GENERALES */
+.btn-azul {
+  background: linear-gradient(45deg, rgba(0,123,255,0.6), rgba(0,198,255,0.6));
+  color: white;
+}
+
+.btn-azul:hover {
+  transform: scale(1.08);
+}
+
+/* -------------------- TABLAS -------------------- */
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.05);
+}
+
+td, th {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px;
+  font-size: 12px;
+}
+
+/* -------------------- CAJA RESULTADOS -------------------- */
+.resultado {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+}
+
+/* RESUMEN FINAL */
+.resumen {
+  background: rgba(0,123,255,0.15);
+  border: 1px solid rgba(0,198,255,0.3);
+}
+
+/* -------------------- TEXTAREA -------------------- */
+textarea {
+  width: 95%;
+  height: 80px;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  resize: none;
+  background: rgba(255,255,255,0.25);
+  color: black;
+}
+
+/* -------------------- TITULOS -------------------- */
+h1, h2, h3 {
+  margin: 10px 0;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .btn-azul {
+    width: 90%;
+  }
+}
